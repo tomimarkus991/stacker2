@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-surface-bg;
+  }
+  p {
+    @apply text-[#393939] font-catamaran;
+  }
+
+  h1 {
+    @apply text-[#393939] font-catamaran;
+  }
+
+  span {
+    @apply text-[#393939];
+  }
+  b {
+    @apply text-[#393939];
+  }
+
+  li {
+    @apply text-stone-600;
+  }
+  button {
+    @apply text-[#393939];
+  }
+}
+
+@layer components {
+ .remove-ring {
+    @apply focus:ring-0 ring-white ring-opacity-0 ring-offset-2 ring-offset-transparent focus:outline-none;
+ }
+}
