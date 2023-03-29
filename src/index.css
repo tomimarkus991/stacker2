@@ -2,7 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+canvas {
+  touch-action: none;
+}
+
+.sky-gradient {
+  background: linear-gradient(to bottom, #0a2c39 0%,#052a46 100%); 
+}
+
 @layer base {
+  body, #root {
+    @apply sky-gradient h-[100vh];
+  }
   body {
     @apply bg-surface-bg;
   }
