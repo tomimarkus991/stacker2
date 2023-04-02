@@ -1,4 +1,4 @@
-import { KeyboardControls, KeyboardControlsEntry, OrbitControls } from "@react-three/drei";
+import { Center, KeyboardControls, KeyboardControlsEntry } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
 import { useRegisterPWA, useThemeUtils } from "@redlotus/ui";
 import { useMemo } from "react";
@@ -27,17 +27,18 @@ export const Router = () => {
           fov: 45,
           near: 0.1,
           far: 2000,
-          position: [2.5, 4, 6],
+          aspect: window.innerWidth / window.innerHeight,
         }}
       >
-        <OrbitControls makeDefault />
-        <Routes>
-          {routesWithSidebar.map(route => (
-            <Route key={route.to} path={route.to} element={route.element} />
-          ))}
+        <Center>
+          <Routes>
+            {routesWithSidebar.map(route => (
+              <Route key={route.to} path={route.to} element={route.element} />
+            ))}
 
-          <Route path="*" element={<ErrorPage />} />
-        </Routes>
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
+        </Center>
       </Canvas>
     </KeyboardControls>
   );

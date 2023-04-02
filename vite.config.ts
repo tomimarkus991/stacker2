@@ -1,6 +1,7 @@
 /// <reference types="vitest" />
 
 import react from "@vitejs/plugin-react";
+// import { r3f } from "@react-three/editor/vite";
 import { defineConfig } from "vite";
 import checker from "vite-plugin-checker";
 import { VitePWA } from "vite-plugin-pwa";
@@ -10,6 +11,7 @@ import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [
+    // r3f(),
     react(),
     tsconfigPaths(),
     checker({ typescript: true }),
